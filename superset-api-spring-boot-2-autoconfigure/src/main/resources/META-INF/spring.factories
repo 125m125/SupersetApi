@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+de._125m125.supersetapi.spring.boot._2.autoconfiguration.SupersetapiAutoconfiguration,\
+de._125m125.supersetapi.spring.boot._2.autoconfiguration.model.SupersetapiJacksonAutoconfiguration,\
+de._125m125.supersetapi.spring.boot._2.autoconfiguration.adapter.SupersetapiResttemplateAutoconfiguration,\
+de._125m125.supersetapi.spring.boot._2.autoconfiguration.SupersetapiFinalizerAutoconfiguration

@@ -1,0 +1,11 @@
+# Prepare
+de._125m125.supersetapi.spring.boot._2.autoconfiguration.SupersetapiAutoconfiguration
+
+# Model
+de._125m125.supersetapi.spring.boot._2.autoconfiguration.model.SupersetapiJacksonAutoconfiguration
+
+# Adapter
+de._125m125.supersetapi.spring.boot._2.autoconfiguration.adapter.SupersetapiResttemplateAutoconfiguration
+
+# Finalize
+de._125m125.supersetapi.spring.boot._2.autoconfiguration.SupersetapiFinalizerAutoconfiguration

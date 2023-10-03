@@ -1,0 +1,254 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.125m125.superset-api</groupId>
+	<artifactId>superset-api-parent</artifactId>
+	<version>0.0.1</version>
+	<name>Superset Java API</name>
+	<description>Java implementation to use the superset api. Currenty mostly
+		intended for usage with spring boot and only to embed dashboards or
+		charts.</description>
+	<url>https://github.com/125m125/SupersetApi</url>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<java.version>1.8</java.version>
+		
+		<!-- spring versions -->
+		<spring.boot.2.version>2.7.16</spring.boot.2.version>
+		<spring.boot.3.version>3.1.4</spring.boot.3.version>
+
+		<!-- dependencies -->
+		<dependency.springboot.version>${spring.boot.3.version}</dependency.springboot.version>
+		<dependency.mapstruct.version>1.5.5.Final</dependency.mapstruct.version>
+		<dependency.lombok.version>1.18.28</dependency.lombok.version>
+	</properties>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<developers>
+		<developer>
+			<id>125m125</id>
+			<name>125m125</name>
+			<email>125m125@125m125.de</email>
+			<timezone>Europe/Berlin</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/125m125/SupersetApi.git</connection>
+		<developerConnection>scm:git:ssh//github.com:125m125/SupersetApi.git</developerConnection>
+		<url>https://github.com/125m125/SupersetApi</url>
+	</scm>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-model-jackson</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-spring-web-5</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-spring-web-6</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-spring-boot-2-autoconfigure</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-spring-boot-3-autoconfigure</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-spring-boot-2-starter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-spring-boot-3-starter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${dependency.springboot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${dependency.lombok.version}</version><!--$NO-MVN-MAN-VER$-->
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${dependency.mapstruct.version}</version>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${dependency.mapstruct.version}</version>
+						</path>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>${dependency.lombok.version}</version>
+						</path>
+
+						<!-- additional annotation processor required as of
+						Lombok 1.18.16 -->
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok-mapstruct-binding</artifactId>
+							<version>0.2.0</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.13</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>all</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>superset-api-core</module>
+				<module>superset-api-model-jackson</module>
+				<module>superset-api-spring-web-5</module>
+				<module>superset-api-spring-web-6</module>
+				<module>superset-api-spring-boot-2-autoconfigure</module>
+				<module>superset-api-spring-boot-3-autoconfigure</module>
+				<module>superset-api-spring-boot-2-starter</module>
+				<module>superset-api-spring-boot-3-starter</module>
+				<module>samples</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>release</id>
+			<modules>
+				<module>superset-api-core</module>
+				<module>superset-api-model-jackson</module>
+				<module>superset-api-spring-web-5</module>
+				<module>superset-api-spring-web-6</module>
+				<module>superset-api-spring-boot-2-autoconfigure</module>
+				<module>superset-api-spring-boot-3-autoconfigure</module>
+				<module>superset-api-spring-boot-2-starter</module>
+				<module>superset-api-spring-boot-3-starter</module>
+			</modules>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.3.0</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.6.0</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>3.1.0</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
