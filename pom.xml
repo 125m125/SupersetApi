@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.125m125.superset-api</groupId>
 	<artifactId>superset-api-parent</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>Superset Java API</name>
 	<description>Java implementation to use the superset api. Currenty mostly
 		intended for usage with spring boot and only to embed dashboards or
@@ -17,15 +17,16 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<java.version>1.8</java.version>
-		
+
 		<!-- spring versions -->
-		<spring.boot.2.version>2.7.16</spring.boot.2.version>
-		<spring.boot.3.version>3.1.4</spring.boot.3.version>
+		<spring.boot.2.version>2.7.18</spring.boot.2.version>
+		<spring.boot.3.version>3.5.13</spring.boot.3.version>
+		<spring.boot.4.version>4.0.5</spring.boot.4.version>
 
 		<!-- dependencies -->
-		<dependency.springboot.version>${spring.boot.3.version}</dependency.springboot.version>
-		<dependency.mapstruct.version>1.5.5.Final</dependency.mapstruct.version>
-		<dependency.lombok.version>1.18.28</dependency.lombok.version>
+		<dependency.springboot.version>${spring.boot.4.version}</dependency.springboot.version>
+		<dependency.mapstruct.version>1.6.3</dependency.mapstruct.version>
+		<dependency.lombok.version>1.18.44</dependency.lombok.version>
 	</properties>
 
 	<licenses>
@@ -75,12 +76,22 @@
 			</dependency>
 			<dependency>
 				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-model-jackson3</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
 				<artifactId>superset-api-spring-web-5</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>de.125m125.superset-api</groupId>
 				<artifactId>superset-api-spring-web-6</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-spring-web-7</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
@@ -95,12 +106,22 @@
 			</dependency>
 			<dependency>
 				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-spring-boot-4-autoconfigure</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
 				<artifactId>superset-api-spring-boot-2-starter</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>de.125m125.superset-api</groupId>
 				<artifactId>superset-api-spring-boot-3-starter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.125m125.superset-api</groupId>
+				<artifactId>superset-api-spring-boot-4-starter</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
@@ -184,12 +205,16 @@
 			<modules>
 				<module>superset-api-core</module>
 				<module>superset-api-model-jackson</module>
+				<module>superset-api-model-jackson3</module>
 				<module>superset-api-spring-web-5</module>
 				<module>superset-api-spring-web-6</module>
+				<module>superset-api-spring-web-7</module>
 				<module>superset-api-spring-boot-2-autoconfigure</module>
 				<module>superset-api-spring-boot-3-autoconfigure</module>
+				<module>superset-api-spring-boot-4-autoconfigure</module>
 				<module>superset-api-spring-boot-2-starter</module>
 				<module>superset-api-spring-boot-3-starter</module>
+				<module>superset-api-spring-boot-4-starter</module>
 				<module>samples</module>
 			</modules>
 		</profile>
@@ -198,12 +223,16 @@
 			<modules>
 				<module>superset-api-core</module>
 				<module>superset-api-model-jackson</module>
+				<module>superset-api-model-jackson3</module>
 				<module>superset-api-spring-web-5</module>
 				<module>superset-api-spring-web-6</module>
+				<module>superset-api-spring-web-7</module>
 				<module>superset-api-spring-boot-2-autoconfigure</module>
 				<module>superset-api-spring-boot-3-autoconfigure</module>
+				<module>superset-api-spring-boot-4-autoconfigure</module>
 				<module>superset-api-spring-boot-2-starter</module>
 				<module>superset-api-spring-boot-3-starter</module>
+				<module>superset-api-spring-boot-4-starter</module>
 			</modules>
 			<build>
 				<plugins>

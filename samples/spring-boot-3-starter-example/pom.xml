@@ -5,14 +5,26 @@
 	<parent>
 		<groupId>de.125m125.superset-api</groupId>
 		<artifactId>samples</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.2</version>
 	</parent>
 	<artifactId>spring-boot-3-starter-example</artifactId>
 	<properties>
 		<maven.compiler.target>17</maven.compiler.target>
 		<maven.compiler.source>17</maven.compiler.source>
 		<java.version>17</java.version>
+		<dependency.springboot.version>${spring.boot.3.version}</dependency.springboot.version>
 	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${dependency.springboot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>de.125m125.superset-api</groupId>

@@ -26,8 +26,8 @@ public class SupersetController {
   }
 
   @PostMapping("/guestToken")
-  public String createGuestToken(@RequestParam String firstName, @RequestParam String lastName,
-      @RequestParam String guestName) {
+  public String createGuestToken(@RequestParam("firstName") String firstName,
+      @RequestParam("lastName") String lastName, @RequestParam("guestName") String guestName) {
     GuestTokenRequestData requestData =
         supersetFactory.createGuestTokenRequestDataBuilder(firstName, lastName, guestName)
             .addResource(properties.getId(), properties.getType())

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.125m125.superset-api</groupId>
 		<artifactId>superset-api-parent</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.2</version>
 	</parent>
 	<artifactId>samples</artifactId>
 	<packaging>pom</packaging>
@@ -25,5 +25,6 @@
 	<modules>
 		<module>spring-boot-3-starter-example</module>
 		<module>spring-boot-2-starter-example</module>
+		<module>spring-boot-4-starter-example</module>
 	</modules>
 </project>
