@@ -6,6 +6,7 @@
     <version>0.0.2</version>
   </parent>
   <artifactId>superset-api-spring-boot-4-starter</artifactId>
+	<name>Superset API - Spring Boot 4 Starter</name>
   
   
 	<properties>

@@ -8,6 +8,7 @@
 		<version>0.0.2</version>
 	</parent>
 	<artifactId>superset-api-model-jackson3</artifactId>
+	<name>Superset API - Jackson 3 Model</name>
 
 	<dependencies>
 		<dependency>

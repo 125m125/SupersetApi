@@ -8,7 +8,7 @@
 		<version>0.0.2</version>
 	</parent>
 	<artifactId>superset-api-spring-web-7</artifactId>
-
+	<name>Superset API - Spring Web 7</name>
 
 	<properties>
 		<dependency.springboot.version>${spring.boot.4.version}</dependency.springboot.version>

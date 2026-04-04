@@ -8,6 +8,7 @@
 		<version>0.0.2</version>
 	</parent>
 	<artifactId>superset-api-spring-web-5</artifactId>
+	<name>Superset API - Spring Web 5</name>
 	<properties>
 		<dependency.springboot.version>${spring.boot.2.version}</dependency.springboot.version>
 	</properties>

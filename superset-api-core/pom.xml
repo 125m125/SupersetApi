@@ -8,4 +8,5 @@
 		<version>0.0.2</version>
 	</parent>
 	<artifactId>superset-api-core</artifactId>
+	<name>Superset API Core</name>
 </project>

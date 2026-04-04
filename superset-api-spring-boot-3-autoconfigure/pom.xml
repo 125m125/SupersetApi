@@ -8,6 +8,7 @@
 		<version>0.0.2</version>
 	</parent>
 	<artifactId>superset-api-spring-boot-3-autoconfigure</artifactId>
+	<name>Superset API - Spring Boot 3 Autoconfiguration</name>
 
 	<properties>
 		<dependency.springboot.version>${spring.boot.3.version}</dependency.springboot.version>

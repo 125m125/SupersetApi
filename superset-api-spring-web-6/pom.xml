@@ -7,6 +7,8 @@
 		<artifactId>superset-api-parent</artifactId>
 		<version>0.0.2</version>
 	</parent>
+	<artifactId>superset-api-spring-web-6</artifactId>
+	<name>Superset API - Spring Web 6</name>
 
 	<properties>
 		<dependency.springboot.version>${spring.boot.3.version}</dependency.springboot.version>
@@ -23,8 +25,6 @@
 		</dependencies>
 	</dependencyManagement>
 
-
-	<artifactId>superset-api-spring-web-6</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>de.125m125.superset-api</groupId>
